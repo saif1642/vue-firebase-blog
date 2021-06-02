@@ -5,7 +5,7 @@
                <router-link class="header" :to="{ name: 'Home'}">VueFiredBlog</router-link>
            </div>
            <div class="nav-links">
-               <ul v-show="!mobileNav">
+               <ul v-show="!mobile">
                    <router-link class="link" to="#">Home</router-link>
                    <router-link class="link" to="#">Blogs</router-link>
                    <router-link class="link" to="#">Create Post</router-link>
@@ -77,66 +77,82 @@ header{
             color: #1eb8b8;
         }
     }
-}
-nav{
-    display: flex;
-    padding: 25px 0;
-
-    .branding{
+    nav{
         display: flex;
-        align-items: center;
-        .header{
-            font-weight: 600;
-            font-size: 24px;
-            color: #000;
-            text-decoration: none;
-        }
-    }
-    .nav-links{
-        position: relative;
-        display: flex;
-        flex: 1;
-        align-items: center;
-        justify-content: flex-end;
+        padding: 25px 0;
 
-        ul {
-            margin-right: 32px;
-            .link{
-              margin-right:32px;
-            }
-            .link:last-child{
-                margin-right: 0;
+        .branding{
+            display: flex;
+            align-items: center;
+            .header{
+                font-weight: 600;
+                font-size: 24px;
+                color: #000;
+                text-decoration: none;
             }
         }
+        .nav-links{
+            position: relative;
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: flex-end;
+
+            ul {
+                margin-right: 32px;
+                .link{
+                margin-right:32px;
+                }
+                .link:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .menu-icon{
+        cursor: pointer;
+        position: absolute;
+        top:32px;
+        right: 25px;
+        height: 25px;
+        width: auto;
+    }
+
+    .mobile-nav{
+        padding: 20px;
+        width: 70%;
+        max-width: 250px;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        background-color: #303030;
+        top:0;
+        left:0;
+
+        .link{
+            padding: 15px 0;
+            color: #fff;
+
+        }
+    }
+    .mobile-nav-enter-active,
+    .mobile-nav-leave-active{
+        transition: all 1s ease;
+
+    }
+
+    .mobile-nav-enter{
+        transform: translateX(-250px);
+    }
+    .mobile-nav-enter-to{
+        transform: translateX(0);
+    }
+    .mobile-nav-leave-to{
+        transform: translateX(-250px);
     }
 }
 
-.menu-icon{
-    cursor: pointer;
-    position: absolute;
-    top:32px;
-    right: 25px;
-    height: 25px;
-    width: auto;
-}
-
-.mobile-nav{
-    padding: 20px;
-    width: 70%;
-    max-width: 250px;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    height: 100%;
-    background-color: #303030;
-    top:0;
-    left:0;
-
-    .link{
-        padding: 15px 0;
-        color: #fff;
-
-    }
-}
 
 </style>
