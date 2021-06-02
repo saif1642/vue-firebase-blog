@@ -3,16 +3,20 @@
     <div class="app">
       <Navigation />
       <router-view />
+      <Footer />
     </div>
   </div>
 </template>
 
 <script>
 import Navigation from './components/Navbigation';
+import Footer from './components/Footer';
+
 export default {
   name: "app",
   components: {
-    Navigation
+    Navigation,
+    Footer
   },
   data() {
     return {};
