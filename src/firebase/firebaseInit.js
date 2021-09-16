@@ -1,4 +1,4 @@
-import firebase from 'firebase/app';
+import * as firebase from "firebase/app";
 import 'firebase/firestore';
 
 var firebaseConfig = {
@@ -15,4 +15,4 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 const timestamp = firebase.firestore.FindValue.serverTimestamp;
 
 export { timestamp };
-export default firebase.firestore();
+export default firebaseApp.firestore();
