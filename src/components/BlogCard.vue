@@ -1,3 +1,4 @@
+
 <template>
     <div class="blog-card">
         <div v-show="editPost" class="icons">
@@ -22,12 +23,15 @@
 <script>
 import Edit from "../assets/Icons/edit-regular.svg";
 import Delete from "../assets/Icons/trash-regular.svg";
+import Arrow from "../assets/Icons/arrow-right-light.svg"
+
 export default {
   name: "blogCard",
   props: ["post"],
   components: {
     Edit,
     Delete,
+    Arrow
   },
   computed:{
     editPost(){

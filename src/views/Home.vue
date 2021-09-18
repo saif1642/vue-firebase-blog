@@ -24,9 +24,15 @@
 <script>
 import BlogPost from "../components/BlogPost";
 import BlogCard from "../components/BlogCard";
+import Arrow from "../assets/Icons/arrow-right-light.svg"
+
 export default {
   name: "Home",
-  components: {BlogPost,BlogCard},
+  components: {
+    BlogPost,
+    BlogCard,
+    Arrow
+  },
   data(){
     return{
       welcomeScreen: {

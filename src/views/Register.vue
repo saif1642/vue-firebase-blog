@@ -40,9 +40,9 @@ import email from "../assets/Icons/envelope-regular.svg";
 import password from "../assets/Icons/lock-alt-solid.svg";
 import user from "../assets/Icons/user-alt-light.svg";
 
-import firebase from 'firebase/compat/auth';
-import "firebase/compat/auth"
-import db from "../firebase/firebaseInit.js";
+import firebase from "firebase/app";
+import "firebase/auth";
+import db from "../firebase/firebaseInit";
 
 
 
@@ -77,6 +77,7 @@ export default {
                 this.errorMsg = "";
                 const firebaseAuth = await firebase.auth(); 
                 const createUser = await firebaseAuth.createUserWithEmailAndPassword(this.email, this.password);
+                console.log(createUser);
                 const result = await createUser;
                 const database = db.collection('users').doc(result.user.uid);
                 await database.set({
