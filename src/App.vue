@@ -28,7 +28,10 @@ export default {
   },
   created() {
     this.checkRoute();
-    console.log(firebase.auth().currentUser.uid)
+    setTimeout(() => {
+       console.log(firebase.auth().currentUser.uid)
+    },2000)
+    
   },
   mounted() {},
   methods: {
